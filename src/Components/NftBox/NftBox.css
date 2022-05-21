@@ -1,0 +1,85 @@
+.nft-box {
+  width: 240px;
+  height: 340px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.top-nft {
+  position: relative;
+}
+.top-nft p {
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  width: min-content;
+  color: white;
+}
+.top-nft img {
+  max-width: 100%;
+  object-fit: contain;
+}
+.bottom-nft {
+  background: linear-gradient(
+    92.91deg,
+    rgba(19, 22, 30, 0.76) 1.78%,
+    rgba(19, 22, 30, 0.62) 99.64%
+  );
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -4px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  padding-inline: 10px;
+  height: 100%;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.72);
+}
+.specs-nft {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.spec-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  width: 73px;
+  color: white;
+}
+.spec-row p {
+  font-size: 0.9rem;
+}
+.rent {
+  width: 110px;
+  height: 44px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 15px;
+  background-color: transparent;
+  color: white;
+  letter-spacing: 1px;
+  transition: all 0.4s ease-in-out;
+  font-weight: 400;
+  background: linear-gradient(
+    90deg,
+    #2e62ff 2.66%,
+    #4b24dc 103.16%,
+    #2e62ff 201.6%
+  );
+  border-radius: 60px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+.grey-rent {
+  background: none;
+  background-color: rgba(255, 255, 255, 0.32);
+}
