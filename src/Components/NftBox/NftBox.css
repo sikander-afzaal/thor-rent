@@ -55,6 +55,13 @@
 .spec-row p {
   font-size: 0.9rem;
 }
+.spec-row:first-child p {
+  font-weight: 300;
+}
+.spec-row:last-child p {
+  font-weight: 500;
+}
+
 .rent {
   width: 110px;
   height: 44px;
