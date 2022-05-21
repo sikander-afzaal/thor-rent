@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import Header from "./Layout/Header/Header";
+import RentRow from "./Components/RentRow/RentRow";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="top-app-cont">
+        <div className="top-app">
+          <Header />
+          <div className="top-app__bottom">
+            <div className="row-rent-selection">
+              <p className="kanit active">Rented NFTs</p>
+              <p className="kanit">Rent out NFT</p>
+            </div>
+            <RentRow />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
