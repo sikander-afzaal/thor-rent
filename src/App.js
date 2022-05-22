@@ -10,6 +10,7 @@ import { Routes, Route, Link, useLocation } from "react-router-dom";
 import RetrieveRow from "./Components/RetrieveRow/RetrieveRow";
 import RentModal from "./Components/RentModal/RentModal";
 import AddModal from "./Components/AddModal/AddModal";
+import FilterModal from "./Components/FilterModal/FilterModal";
 
 function App() {
   const location = useLocation();
@@ -75,6 +76,7 @@ function App() {
             <NftBox rented={true} btn={"RENT"} />
           </div>
         </div>
+        <FilterModal />
         {/* <AddModal /> */}
         {/* <RentModal /> */}
       </div>
