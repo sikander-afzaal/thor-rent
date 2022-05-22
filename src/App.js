@@ -9,6 +9,7 @@ import Footer from "./Layout/Footer/Footer";
 import { Routes, Route, Link, useLocation } from "react-router-dom";
 import RetrieveRow from "./Components/RetrieveRow/RetrieveRow";
 import RentModal from "./Components/RentModal/RentModal";
+import AddModal from "./Components/AddModal/AddModal";
 
 function App() {
   const location = useLocation();
@@ -57,23 +58,24 @@ function App() {
             </p>
           </div>
           <div className="nft-grid">
-            <NftBox />
-            <NftBox rented={true} />
-            <NftBox rented={true} />
-            <NftBox rented={true} />
-            <NftBox rented={true} />
-            <NftBox />
-            <NftBox rented={true} />
-            <NftBox rented={true} />
-            <NftBox rented={true} />
-            <NftBox rented={true} />
-            <NftBox />
-            <NftBox rented={true} />
-            <NftBox rented={true} />
-            <NftBox rented={true} />
-            <NftBox rented={true} />
+            <NftBox btn={"RENT"} />
+            <NftBox rented={true} btn={"RENT"} />
+            <NftBox rented={true} btn={"RENT"} />
+            <NftBox rented={true} btn={"RENT"} />
+            <NftBox rented={true} btn={"RENT"} />
+            <NftBox btn={"RENT"} />
+            <NftBox rented={true} btn={"RENT"} />
+            <NftBox rented={true} btn={"RENT"} />
+            <NftBox rented={true} btn={"RENT"} />
+            <NftBox rented={true} btn={"RENT"} />
+            <NftBox btn={"RENT"} />
+            <NftBox rented={true} btn={"RENT"} />
+            <NftBox rented={true} btn={"RENT"} />
+            <NftBox rented={true} btn={"RENT"} />
+            <NftBox rented={true} btn={"RENT"} />
           </div>
         </div>
+        {/* <AddModal /> */}
         {/* <RentModal /> */}
       </div>
       <Footer />

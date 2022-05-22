@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "./NftBox.css";
 import heimdall from "../../Assets/nft/heimdall.png";
 import energy from "../../Assets/nft/energy.svg";
 import user from "../../Assets/nft/user.svg";
-function NftBox({ rented }) {
+function NftBox({ rented, btn, select }) {
+  const [active, setActive] = useState(false);
   return (
     <div className="nft-box">
       <div className="top-nft">
@@ -21,9 +22,20 @@ function NftBox({ rented }) {
             <p className="noto-sans">70/30</p>
           </div>
         </div>
-        <button className={`rent kanit ${rented ? "grey-rent" : ""}`}>
-          {rented ? "Rented" : "Rent"}
-        </button>
+        {select ? (
+          <button
+            onClick={() => setActive((prev) => !prev)}
+            className={`select ${active ? "active-btn" : ""} kanit ${
+              rented ? "grey-rent" : ""
+            }`}
+          >
+            {active ? "Selected" : rented ? "Rented" : btn}
+          </button>
+        ) : (
+          <button className={`rent kanit ${rented ? "grey-rent" : ""}`}>
+            {rented ? "Rented" : btn}
+          </button>
+        )}
       </div>
     </div>
   );
