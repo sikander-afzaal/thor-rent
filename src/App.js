@@ -1,12 +1,29 @@
 import "./App.css";
+import React, { useRef, useEffect } from "react";
 import Header from "./Layout/Header/Header";
 import RentRow from "./Components/RentRow/RentRow";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import NftBox from "./Components/NftBox/NftBox";
 import Footer from "./Layout/Footer/Footer";
+import { Routes, Route, Link, useLocation } from "react-router-dom";
+import RetrieveRow from "./Components/RetrieveRow/RetrieveRow";
+import RentModal from "./Components/RentModal/RentModal";
 
 function App() {
+  const location = useLocation();
+  const link1 = useRef();
+  const link2 = useRef();
+  useEffect(() => {
+    const active = document.querySelector(".active");
+    active.classList.remove("active");
+    if (location.pathname === "/") {
+      link1.current.classList.add("active");
+    } else if (location.pathname === "/Retrieve") {
+      link2.current.classList.add("active");
+    }
+  }, [location.pathname]);
+
   return (
     <div className="App">
       <div className="top-app-cont">
@@ -14,10 +31,17 @@ function App() {
           <Header />
           <div className="top-app__bottom">
             <div className="row-rent-selection">
-              <p className="kanit active">Rented NFTs</p>
-              <p className="kanit">Rent out NFT</p>
+              <Link ref={link1} to={"/"} className="kanit active">
+                Rented NFTs
+              </Link>
+              <Link ref={link2} to={"/Retrieve"} className="kanit">
+                Rent out NFT
+              </Link>
             </div>
-            <RentRow />
+            <Routes>
+              <Route path="/" element={<RentRow />} />
+              <Route path="/Retrieve" element={<RetrieveRow />} />
+            </Routes>
           </div>
         </div>
       </div>
@@ -50,8 +74,9 @@ function App() {
             <NftBox rented={true} />
           </div>
         </div>
-        <Footer />
+        {/* <RentModal /> */}
       </div>
+      <Footer />
     </div>
   );
 }

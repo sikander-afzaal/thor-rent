@@ -1,39 +1,36 @@
 import React from "react";
-import "./RentRow.css";
+import RentedNft from "../rentedNft/rentedNft";
+import "./RetrieveRow.css";
 import heimdall from "../../Assets/rented/heimdall-rented.png";
 import freya from "../../Assets/rented/freya-rented.png";
-import odin from "../../Assets/rented/odin-rented.png";
 import thor from "../../Assets/rented/thor-rented.png";
-import RentedNft from "../rentedNft/rentedNft";
-function RentRow() {
+import add from "../../Assets/add.svg";
+function RetrieveRow() {
   return (
     <div className="row-rented-nft">
+      <div className="add-box">
+        <img src={add} alt="" />
+      </div>
       <RentedNft
         name={"heimdall"}
         img={heimdall}
         text={"Heimdall #0001"}
-        btn={"RETURN NFT"}
+        btn={"RETRIEVE NFT"}
       />
       <RentedNft
         name={"freya"}
         img={freya}
         text={"Freya #0002"}
-        btn={"RETURN NFT"}
+        btn={"RETRIEVE NFT"}
       />
       <RentedNft
         name={"thor"}
         img={thor}
         text={"Thor #0003"}
-        btn={"RETURN NFT"}
-      />
-      <RentedNft
-        name={"odin"}
-        img={odin}
-        text={"Odin #0004"}
-        btn={"RETURN NFT"}
+        btn={"RETRIEVE NFT"}
       />
     </div>
   );
 }
 
-export default RentRow;
+export default RetrieveRow;

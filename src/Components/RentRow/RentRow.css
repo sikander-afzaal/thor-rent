@@ -10,18 +10,21 @@
   bottom: 0;
   background-color: rgba(255, 255, 255, 0.25);
 }
-.row-rent-selection p {
+.row-rent-selection a {
   position: relative;
   padding-bottom: 10px;
   cursor: pointer;
   color: rgba(255, 255, 255, 0.25);
   font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
 }
 .active {
   color: white !important;
 }
-.row-rent-selection .active::before {
+.row-rent-selection a::before {
   content: "";
+  transition: all 0.3s ease-in-out;
   position: absolute;
   width: 100%;
   z-index: 3;
@@ -29,7 +32,11 @@
   bottom: -1px;
   border-radius: 10px;
   left: 0;
+  opacity: 0;
   background-image: linear-gradient(to right, #2e62ff 100%, #4b24dc 100%);
+}
+.active::before {
+  opacity: 1 !important;
 }
 @media screen and (max-width: 540px) {
   .row-rented-nft {

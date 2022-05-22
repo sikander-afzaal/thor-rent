@@ -1,6 +1,6 @@
 import React from "react";
 import "./rentedNft.css";
-function RentedNft({ text, img, name }) {
+function RentedNft({ text, img, name, btn }) {
   return (
     <div className={`rent-box ${name}`}>
       <div className="cooldown-bar"></div>
@@ -11,7 +11,7 @@ function RentedNft({ text, img, name }) {
       <img src={img} alt="" className="abs-rented" />
       <div className="main-box-rent">
         <div className="desc-nft noto-sans">{text}</div>
-        <button className="return kanit">RETURN NFT</button>
+        <button className="return kanit">{btn}</button>
       </div>
     </div>
   );

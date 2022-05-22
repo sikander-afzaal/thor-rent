@@ -144,8 +144,9 @@
   font-size: 18px;
 }
 @media screen and (max-width: 532px) {
-  .rent-box {
-    width: 100%;
+  .rent-box,
+  .add-box {
+    width: 100% !important;
   }
   .abs-rented {
     left: 50%;
