@@ -4,23 +4,38 @@ import heimdallImg from "../../Assets/filter/heimdall.png";
 import thorImg from "../../Assets/filter/thor.png";
 import freyaImg from "../../Assets/filter/freya.png";
 import odinImg from "../../Assets/filter/odin.png";
+import Box from "@mui/material/Box";
+import RangeSlider from "../RangeSlider/index";
 function FilterModal() {
   const [active, setActive] = useState([false, false, false, false]);
   const [heim, setHeim] = useState(false);
   const [freya, setFreya] = useState(false);
   const [thor, setThor] = useState(false);
   const [odin, setOdin] = useState(false);
+  const [status, setStatus] = useState(null);
+
+  const statusData = [
+    {
+      label: "LEGENDARY",
+      activeClass: "r_box goldRadio",
+    },
+    {
+      label: "COMMON",
+      activeClass: "r_box greyRadio",
+    },
+  ];
+
   return (
     <>
-      <div className="overlay-modal"></div>
-      <div className="filter-modal">
+      <Box className="overlay-modal"></Box>
+      <Box className="filter-modal">
         <h2 onClick={() => console.log(active)} className="kanit">
           Filter By
         </h2>
-        <div className="filter-row-modal">
+        <Box className="filter-row-modal">
           <h3 className="kanit">Character</h3>
-          <div className="character-row">
-            <div
+          <Box className="character-row">
+            <Box
               onClick={() => {
                 // setActive((prev) => {
                 //   prev[0] = !prev[0];
@@ -31,8 +46,8 @@ function FilterModal() {
               className={`${heim ? "heimdall-modal" : ""}`}
             >
               <img src={heimdallImg} alt="" className="char" />
-            </div>
-            <div
+            </Box>
+            <Box
               onClick={() =>
                 // setActive((prev) => {
                 //   prev[1] = !prev[1];
@@ -43,8 +58,8 @@ function FilterModal() {
               className={`${freya ? "freya-modal" : ""}`}
             >
               <img src={freyaImg} alt="" className="char" />
-            </div>
-            <div
+            </Box>
+            <Box
               onClick={() =>
                 // setActive((prev) => {
                 //   prev[2] = !prev[2];
@@ -55,8 +70,8 @@ function FilterModal() {
               className={`${thor ? "thor-modal" : ""}`}
             >
               <img src={thorImg} alt="" className="char" />
-            </div>
-            <div
+            </Box>
+            <Box
               onClick={() =>
                 // setActive((prev) => {
                 //   prev[3] = !prev[3];
@@ -67,28 +82,35 @@ function FilterModal() {
               className={`${odin ? "odin-modal" : ""}`}
             >
               <img src={odinImg} alt="" className="char" />
-            </div>
-          </div>
-        </div>
-        <div className="filter-row-modal">
+            </Box>
+          </Box>
+        </Box>
+        <RangeSlider />
+        <Box className="filter-row-modal">
           <h3 className="kanit">Rarity</h3>
-          <div className="rare-row">
-            <div className="form-group">
-              <input type="checkbox" id="Legendary" />
-              <label className="kanit" htmlFor="Legendary">
-                Legendary
-              </label>
-            </div>
-            <div className="form-group">
-              <input type="checkbox" id="Common" />
-              <label className="kanit" htmlFor="Common">
-                Common
-              </label>
-            </div>
-          </div>
-        </div>
+          <Box className="rare-row">
+            {statusData.map((d, i) => {
+              return (
+                <Box
+                  key={i}
+                  className="s_main"
+                  display="flex"
+                  alignItems="center"
+                >
+                  <Box
+                    onClick={() => setStatus((prev) => (prev === i ? null : i))}
+                    className={d.activeClass}
+                  >
+                    {status === i ? <Box></Box> : ""}
+                  </Box>
+                  <h5 className="kanit">{d.label}</h5>
+                </Box>
+              );
+            })}
+          </Box>
+        </Box>
         <p className="stats kanit">Stats coming soon</p>
-      </div>
+      </Box>
     </>
   );
 }

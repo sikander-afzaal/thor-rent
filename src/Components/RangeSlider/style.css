@@ -1,0 +1,42 @@
+.range_slder {
+  width: 100%;
+  padding: 20px 6px;
+  border-top: 1px solid #ffffff1a;
+  border-bottom: 1px solid #ffffff1a;
+}
+
+.MuiSlider-thumbColorPrimary {
+  background: linear-gradient(
+    112.98deg,
+    #fff4d1 8.47%,
+    #f5d28f 23.3%,
+    #675537 91.31%
+  ) !important;
+}
+
+.range_slder .MuiSlider-thumbColorPrimary {
+  border-radius: 0 !important;
+  width: 5px !important;
+}
+
+.MuiSlider-markLabel {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.MuiSlider-markLabelActive {
+  color: #fff !important;
+}
+
+.MuiSlider-track {
+  background: #a88d47 !important;
+  border: 0 !important;
+}
+
+.MuiSlider-rail {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 0 !important;
+}
+
+.MuiSlider-mark {
+  background-color: transparent !important;
+}

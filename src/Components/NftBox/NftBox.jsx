@@ -3,25 +3,26 @@ import "./NftBox.css";
 import heimdall from "../../Assets/nft/heimdall.png";
 import energy from "../../Assets/nft/energy.svg";
 import user from "../../Assets/nft/user.svg";
+import Box from "@mui/material/Box";
 function NftBox({ rented, btn, select }) {
   const [active, setActive] = useState(false);
   return (
-    <div className="nft-box">
-      <div className="top-nft">
+    <Box className="nft-box">
+      <Box className="top-nft">
         <img src={heimdall} alt="" />
         <p className="noto-sans">Heimdall #0001</p>
-      </div>
-      <div className="bottom-nft">
-        <div className="specs-nft">
-          <div className="spec-row">
+      </Box>
+      <Box className="bottom-nft">
+        <Box className="specs-nft">
+          <Box className="spec-row">
             <img src={user} alt="" />
             <p className="noto-sans">Heimdall</p>
-          </div>
-          <div className="spec-row">
+          </Box>
+          <Box className="spec-row">
             <img src={energy} alt="" />
             <p className="noto-sans">70/30</p>
-          </div>
-        </div>
+          </Box>
+        </Box>
         {select ? (
           <button
             onClick={() => setActive((prev) => !prev)}
@@ -36,8 +37,8 @@ function NftBox({ rented, btn, select }) {
             {rented ? "Rented" : btn}
           </button>
         )}
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 }
 

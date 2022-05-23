@@ -5,12 +5,13 @@ import heimdall from "../../Assets/rented/heimdall-rented.png";
 import freya from "../../Assets/rented/freya-rented.png";
 import thor from "../../Assets/rented/thor-rented.png";
 import add from "../../Assets/add.svg";
+import Box from "@mui/material/Box";
 function RetrieveRow() {
   return (
-    <div className="row-rented-nft">
-      <div className="add-box">
+    <Box className="row-rented-nft">
+      <Box className="add-box">
         <img src={add} alt="" />
-      </div>
+      </Box>
       <RentedNft
         name={"heimdall"}
         img={heimdall}
@@ -29,7 +30,7 @@ function RetrieveRow() {
         text={"Thor #0003"}
         btn={"RETRIEVE NFT"}
       />
-    </div>
+    </Box>
   );
 }
 

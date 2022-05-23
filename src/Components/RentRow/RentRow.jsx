@@ -5,9 +5,10 @@ import freya from "../../Assets/rented/freya-rented.png";
 import odin from "../../Assets/rented/odin-rented.png";
 import thor from "../../Assets/rented/thor-rented.png";
 import RentedNft from "../rentedNft/rentedNft";
+import Box from "@mui/material/Box";
 function RentRow() {
   return (
-    <div className="row-rented-nft">
+    <Box className="row-rented-nft">
       <RentedNft
         name={"heimdall"}
         img={heimdall}
@@ -32,7 +33,7 @@ function RentRow() {
         text={"Odin #0004"}
         btn={"RETURN NFT"}
       />
-    </div>
+    </Box>
   );
 }
 

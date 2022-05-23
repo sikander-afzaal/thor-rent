@@ -1,6 +1,6 @@
 .filter-modal {
-  width: 330px;
-  height: 398px;
+  width: 420px;
+  height: 500px;
   position: absolute;
   top: 5%;
   background: #11141d;
@@ -8,7 +8,7 @@
     0px 3.34177px 3.34177px rgba(0, 0, 0, 0.25);
   border-radius: 10.0253px;
   z-index: 8;
-  padding: 0px 20px;
+  padding: 30px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,12 +43,14 @@
 .character-row div {
   flex: 1;
   border-radius: 8px;
+  cursor: pointer;
 }
 .char {
   max-width: 100%;
   object-fit: contain;
   transition: all 0.3s ease-in-out;
   mix-blend-mode: screen;
+  width: 100%;
 }
 .heimdall-modal {
   background: linear-gradient(
@@ -85,73 +87,63 @@
 .character-row {
   gap: 10px;
 }
-.form-group {
-  display: block;
-}
-.form-group input {
-  padding: 0;
-  height: initial;
-  width: initial;
-  margin-bottom: 0;
-  display: none;
-  cursor: pointer;
+
+.s_main {
+  margin: 6px 0;
+  width: 156px;
+  gap: 10px;
 }
 
-.form-group label {
-  position: relative;
+.r_box {
+  width: 22px;
+  border-radius: 2px;
   cursor: pointer;
-  color: white;
-  font-size: 1rem;
-  font-weight: 500;
-  text-transform: uppercase;
+  height: 22px;
+  padding: 2.9px 2.5px 2.9px 2.9px;
+  border: 1.5px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.form-group label:before {
-  content: "";
-  -webkit-appearance: none;
-  background-color: transparent;
-  /* border: 2px solid #0079bf; */
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
-    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
-  padding: 10px;
-  display: inline-block;
-  position: relative;
-  vertical-align: middle;
-  cursor: pointer;
-  margin-right: 5px;
-  border-radius: 3px;
-  top: -2px;
+.r_box div {
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
 }
-.form-group:first-of-type label::before {
-  border: 2px solid #dfab44;
+
+.goldRadio {
+  border-color: #dfab44;
 }
-.form-group:last-of-type label::before {
-  border: 2px solid #555865;
+
+.goldRadio div {
+  background: #dfab44;
 }
-.form-group input:checked + label:after {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 4px;
-  top: 7px;
-  padding: 8px;
+
+.greyRadio {
+  border-color: #555865;
 }
-.form-group:first-of-type input:checked + label:after {
-  background-color: #dfab44;
+
+.greyRadio div {
+  background: #555865;
 }
-.form-group:last-of-type input:checked + label:after {
-  background-color: #555865;
-}
+
 .stats {
   color: #ffffff80;
   font-size: 1rem;
   font-weight: 300;
 }
+.s_main h5 {
+  color: white;
+  font-weight: 500;
+}
 @media screen and (max-width: 589px) {
   .filter-modal {
     top: 2%;
   }
-  .form-group input:checked + label:after {
-    top: 5.9px;
+}
+@media screen and (max-width: 438px) {
+  .filter-modal {
+    width: 95%;
   }
 }

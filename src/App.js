@@ -11,7 +11,7 @@ import RetrieveRow from "./Components/RetrieveRow/RetrieveRow";
 import RentModal from "./Components/RentModal/RentModal";
 import AddModal from "./Components/AddModal/AddModal";
 import FilterModal from "./Components/FilterModal/FilterModal";
-
+import Box from "@mui/material/Box";
 function App() {
   const location = useLocation();
   const link1 = useRef();
@@ -27,38 +27,38 @@ function App() {
   }, [location.pathname]);
 
   return (
-    <div className="App">
-      <div className="top-app-cont">
-        <div className="top-app">
+    <Box className="App">
+      <Box className="top-app-cont">
+        <Box className="top-app">
           <Header />
-          <div className="top-app__bottom">
-            <div className="row-rent-selection">
+          <Box className="top-app__bottom">
+            <Box className="row-rent-selection">
               <Link ref={link1} to={"/"} className="kanit active">
                 Rented NFTs
               </Link>
               <Link ref={link2} to={"/Retrieve"} className="kanit">
                 Rent out NFT
               </Link>
-            </div>
+            </Box>
             <Routes>
               <Route path="/" element={<RentRow />} />
               <Route path="/Retrieve" element={<RetrieveRow />} />
             </Routes>
-          </div>
-        </div>
-      </div>
-      <div className="bottom-app-cont">
-        <div className="overlay"></div>
-        <div className="bottom-app">
-          <div className="filter-row">
+          </Box>
+        </Box>
+      </Box>
+      <Box className="bottom-app-cont">
+        <Box className="overlay"></Box>
+        <Box className="bottom-app">
+          <Box className="filter-row">
             <p className="kanit">
               Filter by <FontAwesomeIcon icon={faChevronDown} />
             </p>
             <p className="kanit">
               Sort by <FontAwesomeIcon icon={faChevronDown} />
             </p>
-          </div>
-          <div className="nft-grid">
+          </Box>
+          <Box className="nft-grid">
             <NftBox btn={"RENT"} />
             <NftBox rented={true} btn={"RENT"} />
             <NftBox rented={true} btn={"RENT"} />
@@ -74,14 +74,14 @@ function App() {
             <NftBox rented={true} btn={"RENT"} />
             <NftBox rented={true} btn={"RENT"} />
             <NftBox rented={true} btn={"RENT"} />
-          </div>
-        </div>
+          </Box>
+        </Box>
         <FilterModal />
         {/* <AddModal /> */}
         {/* <RentModal /> */}
-      </div>
+      </Box>
       <Footer />
-    </div>
+    </Box>
   );
 }
 

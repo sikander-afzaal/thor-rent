@@ -4,14 +4,15 @@ import logo from "../../Assets/foot-logo.png";
 import discord from "../../Assets/discord-grey.svg";
 import twitter from "../../Assets/twitter-grey.svg";
 import circles from "../../Assets/circles-grey.svg";
+import Box from "@mui/material/Box";
 function Footer() {
   return (
-    <div className="footer">
-      <div className="logo-div">
+    <Box className="footer">
+      <Box className="logo-div">
         <img src={logo} alt="" />
-      </div>
+      </Box>
       <h1>Join The Community</h1>
-      <div className="social-div">
+      <Box className="social-Box">
         <a target={"blank"} href="https://discord.gg/thorfinancial">
           <img src={discord} alt="..." />
         </a>
@@ -21,7 +22,7 @@ function Footer() {
         <a target={"blank"} href="https://thornodes.medium.com/">
           <img src={circles} alt="..." />
         </a>
-      </div>
+      </Box>
       <h2>
         ©Gods of Asgard{" "}
         <a target={"blank"} href="https://thor.financial/">
@@ -30,7 +31,7 @@ function Footer() {
         </a>
         . All rights served.
       </h2>
-    </div>
+    </Box>
   );
 }
 
