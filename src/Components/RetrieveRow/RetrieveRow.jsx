@@ -1,15 +1,23 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import Box from "@mui/material/Box";
+
 import RentedNft from "../rentedNft/rentedNft";
 import "./RetrieveRow.css";
 import heimdall from "../../Assets/rented/heimdall-rented.png";
 import freya from "../../Assets/rented/freya-rented.png";
 import thor from "../../Assets/rented/thor-rented.png";
 import add from "../../Assets/add.svg";
-import Box from "@mui/material/Box";
+import { openAddModal } from "../../store/actions/uiActions";
+
 function RetrieveRow() {
+  const dispatch = useDispatch();
+  const openModal = () => {
+    dispatch(openAddModal());
+  };
   return (
     <Box className="row-rented-nft">
-      <Box className="add-box">
+      <Box className="add-box" onClick={openModal}>
         <img src={add} alt="" />
       </Box>
       <RentedNft

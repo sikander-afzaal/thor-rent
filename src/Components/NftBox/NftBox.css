@@ -90,6 +90,9 @@
   background: none;
   background-color: rgba(255, 255, 255, 0.32);
 }
+.grey-rent:disabled {
+  pointer-events: none;
+}
 .select {
   width: 110px;
   height: 44px;

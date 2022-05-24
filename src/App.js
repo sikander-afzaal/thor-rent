@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Header from "./Layout/Header/Header";
 import RentRow from "./Components/RentRow/RentRow";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,7 +12,58 @@ import RentModal from "./Components/RentModal/RentModal";
 import AddModal from "./Components/AddModal/AddModal";
 import FilterModal from "./Components/FilterModal/FilterModal";
 import Box from "@mui/material/Box";
+const cardsData = [
+  {
+    name: "Heimdall",
+    rented: false,
+  },
+  {
+    name: "Heimdall",
+    rented: true,
+  },
+  {
+    name: "Heimdall",
+    rented: false,
+  },
+  {
+    name: "Freya",
+    rented: false,
+  },
+  {
+    name: "Freya",
+    rented: true,
+  },
+  {
+    name: "Freya",
+    rented: false,
+  },
+  {
+    name: "Odin",
+    rented: false,
+  },
+  {
+    name: "Odin",
+    rented: true,
+  },
+  {
+    name: "Odin",
+    rented: false,
+  },
+  {
+    name: "Thor",
+    rented: false,
+  },
+  {
+    name: "Thor",
+    rented: true,
+  },
+  {
+    name: "Thor",
+    rented: false,
+  },
+];
 function App() {
+  const [cardsState, setCardsState] = useState(cardsData);
   const location = useLocation();
   const link1 = useRef();
   const link2 = useRef();
@@ -59,26 +110,14 @@ function App() {
             </p>
           </Box>
           <Box className="nft-grid">
-            <NftBox btn={"RENT"} name={"Heimdall"} />
-            <NftBox rented={true} btn={"RENT"} name={"Heimdall"} />
-            <NftBox rented={true} btn={"RENT"} name={"Heimdall"} />
-            <NftBox rented={true} btn={"RENT"} name={"Heimdall"} />
-            <NftBox rented={true} btn={"RENT"} name={"Freya"} />
-            <NftBox btn={"RENT"} name={"Freya"} />
-            <NftBox rented={true} btn={"RENT"} name={"Freya"} />
-            <NftBox rented={true} btn={"RENT"} name={"Freya"} />
-            <NftBox rented={true} btn={"RENT"} name={"Odin"} />
-            <NftBox rented={true} btn={"RENT"} name={"Odin"} />
-            <NftBox btn={"RENT"} name={"Odin"} />
-            <NftBox rented={true} btn={"RENT"} name={"Odin"} />
-            <NftBox rented={true} btn={"RENT"} name={"Thor"} />
-            <NftBox rented={true} btn={"RENT"} name={"Thor"} />
-            <NftBox rented={true} btn={"RENT"} name={"Thor"} />
+            {cardsState.map((el, idx) => {
+              return <NftBox key={"nft-box" + idx} {...el} />;
+            })}
           </Box>
         </Box>
-        <FilterModal />
-        {/* <AddModal /> */}
-        {/* <RentModal /> */}
+        {/* <FilterModal /> */}
+        <AddModal />
+        <RentModal />
       </Box>
       <Footer />
     </Box>
