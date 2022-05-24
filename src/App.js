@@ -76,7 +76,7 @@ function App() {
             <NftBox rented={true} btn={"RENT"} name={"Thor"} />
           </Box>
         </Box>
-        {/* <FilterModal /> */}
+        <FilterModal />
         {/* <AddModal /> */}
         {/* <RentModal /> */}
       </Box>

@@ -15,6 +15,14 @@
   flex-direction: column;
   gap: 20px;
 }
+.cross-filter {
+  position: absolute;
+  top: 4%;
+  right: 5%;
+  object-fit: contain;
+  max-width: 100%;
+  cursor: pointer;
+}
 .filter-modal h2 {
   font-weight: 500;
   font-size: 1.4rem;

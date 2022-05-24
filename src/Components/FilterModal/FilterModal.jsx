@@ -6,6 +6,7 @@ import freyaImg from "../../Assets/filter/freya.png";
 import odinImg from "../../Assets/filter/odin.png";
 import Box from "@mui/material/Box";
 import RangeSlider from "../RangeSlider/index";
+import cross from "../../Assets/cross.svg";
 function FilterModal() {
   const [active, setActive] = useState([false, false, false, false]);
   const [heim, setHeim] = useState(false);
@@ -29,9 +30,8 @@ function FilterModal() {
     <>
       <Box className="overlay-modal"></Box>
       <Box className="filter-modal">
-        <h2 onClick={() => console.log(active)} className="kanit">
-          Filter By
-        </h2>
+        <img src={cross} alt="" className="cross-filter" />
+        <h2 className="kanit">Filter By</h2>
         <Box className="filter-row-modal">
           <h3 className="kanit">Character</h3>
           <Box className="character-row">

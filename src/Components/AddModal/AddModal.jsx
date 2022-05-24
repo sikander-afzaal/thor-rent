@@ -15,10 +15,10 @@ function AddModal() {
         <img src={cross} alt="" className="cross-add" />
         <h2 className="kanit">Select an NFT to Rent</h2>
         <Box className="add-nft-row">
-          <NftBox btn={"SELECT"} select={true} />
-          <NftBox btn={"SELECT"} select={true} />
-          <NftBox btn={"RENTED"} rented={true} />
-          <NftBox btn={"RENTED"} rented={true} />
+          <NftBox btn={"SELECT"} select={true} name={"Heimdall"} />
+          <NftBox btn={"SELECT"} select={true} name={"Heimdall"} />
+          <NftBox btn={"RENTED"} rented={true} name={"Heimdall"} />
+          <NftBox btn={"RENTED"} rented={true} name={"Heimdall"} />
         </Box>
         <Box className="bottom-add-modal">
           <Box className="percentage">
