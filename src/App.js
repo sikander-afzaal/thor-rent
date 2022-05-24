@@ -59,24 +59,24 @@ function App() {
             </p>
           </Box>
           <Box className="nft-grid">
-            <NftBox btn={"RENT"} />
-            <NftBox rented={true} btn={"RENT"} />
-            <NftBox rented={true} btn={"RENT"} />
-            <NftBox rented={true} btn={"RENT"} />
-            <NftBox rented={true} btn={"RENT"} />
-            <NftBox btn={"RENT"} />
-            <NftBox rented={true} btn={"RENT"} />
-            <NftBox rented={true} btn={"RENT"} />
-            <NftBox rented={true} btn={"RENT"} />
-            <NftBox rented={true} btn={"RENT"} />
-            <NftBox btn={"RENT"} />
-            <NftBox rented={true} btn={"RENT"} />
-            <NftBox rented={true} btn={"RENT"} />
-            <NftBox rented={true} btn={"RENT"} />
-            <NftBox rented={true} btn={"RENT"} />
+            <NftBox btn={"RENT"} name={"Heimdall"} />
+            <NftBox rented={true} btn={"RENT"} name={"Heimdall"} />
+            <NftBox rented={true} btn={"RENT"} name={"Heimdall"} />
+            <NftBox rented={true} btn={"RENT"} name={"Heimdall"} />
+            <NftBox rented={true} btn={"RENT"} name={"Freya"} />
+            <NftBox btn={"RENT"} name={"Freya"} />
+            <NftBox rented={true} btn={"RENT"} name={"Freya"} />
+            <NftBox rented={true} btn={"RENT"} name={"Freya"} />
+            <NftBox rented={true} btn={"RENT"} name={"Odin"} />
+            <NftBox rented={true} btn={"RENT"} name={"Odin"} />
+            <NftBox btn={"RENT"} name={"Odin"} />
+            <NftBox rented={true} btn={"RENT"} name={"Odin"} />
+            <NftBox rented={true} btn={"RENT"} name={"Thor"} />
+            <NftBox rented={true} btn={"RENT"} name={"Thor"} />
+            <NftBox rented={true} btn={"RENT"} name={"Thor"} />
           </Box>
         </Box>
-        <FilterModal />
+        {/* <FilterModal /> */}
         {/* <AddModal /> */}
         {/* <RentModal /> */}
       </Box>

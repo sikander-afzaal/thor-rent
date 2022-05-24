@@ -4,19 +4,19 @@ import heimdall from "../../Assets/nft/heimdall.png";
 import energy from "../../Assets/nft/energy.svg";
 import user from "../../Assets/nft/user.svg";
 import Box from "@mui/material/Box";
-function NftBox({ rented, btn, select }) {
+function NftBox({ rented, btn, select, name }) {
   const [active, setActive] = useState(false);
   return (
     <Box className="nft-box">
       <Box className="top-nft">
         <img src={heimdall} alt="" />
-        <p className="noto-sans">Heimdall #0001</p>
+        <p className="noto-sans">{name} #0001</p>
       </Box>
       <Box className="bottom-nft">
         <Box className="specs-nft">
           <Box className="spec-row">
             <img src={user} alt="" />
-            <p className="noto-sans">Heimdall</p>
+            <p className="noto-sans">{name}</p>
           </Box>
           <Box className="spec-row">
             <img src={energy} alt="" />
