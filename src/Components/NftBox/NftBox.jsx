@@ -20,6 +20,7 @@ function NftBox({
   addModalBox,
   active,
   setActive,
+  img,
 }) {
   const [activeState, setActiveState] = useState();
   const {
@@ -47,7 +48,7 @@ function NftBox({
   return (
     <Box className="nft-box">
       <Box className="top-nft">
-        <img src={heimdall} alt="" />
+        <img src={img} alt="" />
         <p className="noto-sans">{name} #0001</p>
       </Box>
       <Box className="bottom-nft">

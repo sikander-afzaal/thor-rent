@@ -11,6 +11,7 @@ import {
   setAddModalVal,
   addListingCards,
 } from "../../store/actions/uiActions";
+import img1 from "../../Assets/nft/heimdall.png";
 
 function AddModal() {
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ function AddModal() {
       btn: "SELECT",
       name: "Heimdall",
       select: true,
+      img: img1,
     },
     {
       active: false,
@@ -31,6 +33,7 @@ function AddModal() {
       btn: "SELECT",
       name: "Heimdall",
       select: true,
+      img: img1,
     },
     {
       active: false,
@@ -38,6 +41,7 @@ function AddModal() {
       btn: "RENTED",
       name: "Heimdall",
       rented: true,
+      img: img1,
     },
     {
       active: false,
@@ -45,6 +49,7 @@ function AddModal() {
       btn: "RENTED",
       name: "Heimdall",
       rented: true,
+      img: img1,
     },
   ]);
   const {
@@ -82,6 +87,7 @@ function AddModal() {
         rented: el.rented,
         you: el.you,
         renter: el.renter,
+        img: el.img,
       };
     });
     dispatch(addListingCards(mappedCards));

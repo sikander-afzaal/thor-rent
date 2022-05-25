@@ -1,54 +1,69 @@
 import * as actionTypes from "../actions/actionTypes";
-
+import img1 from "../../Assets/nft/heimdall.png";
+import img2 from "../../Assets/nft/freya.png";
+import img3 from "../../Assets/nft/thor.png";
+import img4 from "../../Assets/nft/odin.png";
 const initialState = {
   listingCards: [
     {
       name: "Heimdall",
       rented: false,
+      img: img1,
     },
     {
       name: "Heimdall",
       rented: true,
+      img: img1,
     },
     {
       name: "Heimdall",
       rented: false,
+      img: img1,
     },
     {
       name: "Freya",
       rented: false,
+      img: img2,
     },
     {
       name: "Freya",
       rented: true,
+      img: img2,
     },
     {
       name: "Freya",
       rented: false,
+      img: img2,
     },
     {
       name: "Odin",
       rented: true,
+      img: img4,
     },
     {
       name: "Odin",
       rented: true,
+      img: img4,
     },
     {
       name: "Odin",
       rented: false,
+      img: img4,
     },
     {
       name: "Thor",
       rented: false,
+      img: img3,
     },
     {
       name: "Thor",
       rented: true,
+      img: img3,
     },
     {
       name: "Thor",
       rented: false,
+      img: img3,
     },
   ],
   rentModal: {
