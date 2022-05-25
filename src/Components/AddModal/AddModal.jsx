@@ -75,7 +75,7 @@ function AddModal() {
   }
 
   const closeModal = () => {
-    // document.querySelector("body").classList.remove("overflow");
+    document.querySelector("body").classList.remove("overflow");
     return dispatch(closeModals());
   };
 

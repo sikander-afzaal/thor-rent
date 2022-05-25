@@ -19,6 +19,8 @@
   z-index: 8;
   padding: 40px;
   gap: 20px;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 .cross-add {
   position: absolute;
