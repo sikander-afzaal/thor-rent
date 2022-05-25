@@ -75,6 +75,14 @@ function App() {
             <p className="kanit">
               Sort by <FontAwesomeIcon icon={faChevronDown} />
             </p>
+            <div className="sort-drop-down">
+              <p className="drop-item">Recently Listed</p>
+              <p className="drop-item">Recently Minted</p>
+              <p className="drop-item">Recently Sold</p>
+              <p className="drop-item">Price (Lowest to Highest)</p>
+              <p className="drop-item">Price (Highest to Lowest)</p>
+              <p className="drop-item">Highest Last Sale</p>
+            </div>
           </Box>
           <Box className="nft-grid">
             {listingCards.map((el, idx) => {

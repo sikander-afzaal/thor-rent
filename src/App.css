@@ -74,6 +74,7 @@
   gap: 3rem;
   position: relative;
   z-index: 4;
+  padding-bottom: 1.5rem;
 }
 .filter-row {
   display: flex;
@@ -81,6 +82,7 @@
   align-items: center;
   width: 100%;
   gap: 40px;
+  position: relative;
 }
 .filter-row p {
   display: flex;
@@ -91,6 +93,28 @@
   font-size: 1.1rem;
   padding-bottom: 6px;
   border-bottom: 2px solid white;
+}
+
+.sort-drop-down {
+  position: absolute;
+  bottom: 0;
+  top: 100%;
+  background-color: white;
+  width: 200px;
+  height: 250px;
+  right: -4%;
+  z-index: 4;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 4px;
+}
+.drop-item {
+  border-bottom: none !important;
+  color: black !important;
+  cursor: pointer;
 }
 .nft-grid {
   display: grid;
