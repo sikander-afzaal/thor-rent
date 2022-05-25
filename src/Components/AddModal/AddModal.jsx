@@ -85,6 +85,7 @@ function AddModal() {
       };
     });
     dispatch(addListingCards(mappedCards));
+    closeModal();
   };
 
   if (!active) {
@@ -92,7 +93,6 @@ function AddModal() {
   }
 
   const closeModal = () => {
-    document.querySelector("body").classList.remove("overflow");
     return dispatch(closeModals());
   };
 

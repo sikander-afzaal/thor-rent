@@ -19,8 +19,6 @@
   z-index: 8;
   padding: 40px;
   gap: 20px;
-  max-height: 90vh;
-  overflow-y: auto;
 }
 .cross-add {
   position: absolute;
@@ -168,10 +166,13 @@
     right: 3%;
   }
 }
-@media screen and (max-width: 597px) {
+@media screen and (max-width: 1096px) {
   .add-modal {
-    top: 2%;
+    max-height: 95vh;
+    overflow-y: scroll;
   }
+}
+@media screen and (max-width: 597px) {
   .cross-add {
     right: 4%;
     top: 1%;

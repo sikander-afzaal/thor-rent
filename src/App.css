@@ -99,7 +99,22 @@
   width: 100%;
   gap: 40px;
 }
-
+.scroll-top-btn {
+  display: grid;
+  place-items: center;
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+  padding: 10px;
+  background-color: #4b24dc;
+  height: 50px;
+  width: 50px;
+  z-index: 4;
+  border-radius: 50%;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
 @media screen and (max-width: 1620px) {
   .nft-grid {
     grid-template-columns: repeat(4, 1fr);

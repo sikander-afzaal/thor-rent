@@ -38,7 +38,6 @@ function RentModal() {
 
   const closeModal = () => {
     dispatch(closeModals());
-    document.querySelector("body").classList.remove("overflow");
   };
 
   if (!active) {

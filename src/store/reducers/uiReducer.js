@@ -6,50 +6,50 @@ const initialState = {
       name: "Heimdall",
       rented: false,
     },
-    // {
-    //   name: "Heimdall",
-    //   rented: true,
-    // },
-    // {
-    //   name: "Heimdall",
-    //   rented: false,
-    // },
+    {
+      name: "Heimdall",
+      rented: true,
+    },
+    {
+      name: "Heimdall",
+      rented: false,
+    },
     {
       name: "Freya",
       rented: false,
     },
-    // {
-    //   name: "Freya",
-    //   rented: true,
-    // },
-    // {
-    //   name: "Freya",
-    //   rented: false,
-    // },
+    {
+      name: "Freya",
+      rented: true,
+    },
+    {
+      name: "Freya",
+      rented: false,
+    },
     {
       name: "Odin",
       rented: true,
     },
-    // {
-    //   name: "Odin",
-    //   rented: true,
-    // },
-    // {
-    //   name: "Odin",
-    //   rented: false,
-    // },
+    {
+      name: "Odin",
+      rented: true,
+    },
+    {
+      name: "Odin",
+      rented: false,
+    },
     {
       name: "Thor",
       rented: false,
     },
-    // {
-    //   name: "Thor",
-    //   rented: true,
-    // },
-    // {
-    //   name: "Thor",
-    //   rented: false,
-    // },
+    {
+      name: "Thor",
+      rented: true,
+    },
+    {
+      name: "Thor",
+      rented: false,
+    },
   ],
   rentModal: {
     active: false,

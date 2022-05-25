@@ -29,9 +29,6 @@ function NftBox({
 
   const openRentModal = () => {
     dispatch(setRentModal(name, rented));
-    document.querySelector("body").classList.add("overflow");
-    const bottomApp = document.querySelector(".bottom-app");
-    bottomApp.scrollIntoView(true);
   };
 
   const btnClickHandler = (idx, bool) => {

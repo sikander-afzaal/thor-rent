@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { Routes, Route, Link, useLocation } from "react-router-dom";
 import Box from "@mui/material/Box";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 
 import "./App.css";
@@ -64,6 +64,7 @@ function App() {
         <Box className="bottom-app">
           <Box className="filter-row">
             <p
+              style={{ cursor: "pointer" }}
               className="kanit"
               onClick={() => {
                 dispatch(openFilterModal());
@@ -122,6 +123,15 @@ function App() {
         <RentModal />
       </Box>
       <Footer />
+      <div
+        onClick={() => {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }}
+        className="scroll-top-btn"
+      >
+        <FontAwesomeIcon icon={faChevronUp} />
+      </div>
     </Box>
   );
 }
