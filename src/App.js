@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Routes, Route, Link, useLocation } from "react-router-dom";
 import Box from "@mui/material/Box";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -15,8 +15,10 @@ import RentModal from "./Components/RentModal/RentModal";
 import AddModal from "./Components/AddModal/AddModal";
 import FilterModal from "./Components/FilterModal/FilterModal";
 import { openFilterModal } from "./store/actions/uiActions";
+import clsx from "clsx";
 
 function App() {
+  const [openDropDown, setOpenDropDown] = useState(false);
   const dispatch = useDispatch();
   const {
     listingCards,
@@ -64,7 +66,6 @@ function App() {
         <Box className="bottom-app">
           <Box className="filter-row">
             <p
-              style={{ cursor: "pointer" }}
               className="kanit"
               onClick={() => {
                 dispatch(openFilterModal());
@@ -72,16 +73,28 @@ function App() {
             >
               Filter by <FontAwesomeIcon icon={faChevronDown} />
             </p>
-            <p className="kanit">
-              Sort by <FontAwesomeIcon icon={faChevronDown} />
+            <p
+              onClick={() => setOpenDropDown((prev) => !prev)}
+              className="kanit"
+            >
+              Sort by{" "}
+              <FontAwesomeIcon
+                icon={faChevronDown}
+                className={clsx(openDropDown && "rotate-arrow")}
+              />
             </p>
-            <div className="sort-drop-down">
-              <p className="drop-item">Recently Listed</p>
-              <p className="drop-item">Recently Minted</p>
-              <p className="drop-item">Recently Sold</p>
-              <p className="drop-item">Price (Lowest to Highest)</p>
-              <p className="drop-item">Price (Highest to Lowest)</p>
-              <p className="drop-item">Highest Last Sale</p>
+            <div
+              className={clsx(
+                "sort-drop-down",
+                openDropDown && "open-drop-down"
+              )}
+            >
+              <p className="drop-item kanit">Recently Listed</p>
+              <p className="drop-item kanit">Recently Minted</p>
+              <p className="drop-item kanit">Recently Sold</p>
+              <p className="drop-item kanit">Price (Lowest to Highest)</p>
+              <p className="drop-item kanit">Price (Highest to Lowest)</p>
+              <p className="drop-item kanit">Highest Last Sale</p>
             </div>
           </Box>
           <Box className="nft-grid">
