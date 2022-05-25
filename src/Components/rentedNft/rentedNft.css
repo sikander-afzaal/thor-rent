@@ -5,9 +5,7 @@
   position: relative;
   border-radius: 10px;
 }
-.rent-box:hover .hover-box {
-  opacity: 1;
-}
+
 .heimdall {
   background: linear-gradient(
     0deg,
@@ -82,6 +80,7 @@
   transform: translateX(-50%);
   height: 5px;
   border-radius: 10px;
+  z-index: 4;
 }
 .cooldown-bar::before {
   content: "";
@@ -90,6 +89,9 @@
   background-color: white;
   height: 100%;
   border-radius: 10px;
+}
+.cooldown-bar:hover + .hover-box {
+  opacity: 1;
 }
 .hover-box {
   width: 120px;
