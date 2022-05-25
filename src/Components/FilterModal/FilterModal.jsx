@@ -85,7 +85,10 @@ function FilterModal() {
             </Box>
           </Box>
         </Box>
-        <RangeSlider />
+        <div className="filter-row-modal border-top-bottom">
+          <h3 className="kanit">Energy</h3>
+          <RangeSlider />
+        </div>
         <Box className="filter-row-modal">
           <h3 className="kanit">Rarity</h3>
           <Box className="rare-row">

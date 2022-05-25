@@ -1,6 +1,6 @@
 .filter-modal {
   width: 420px;
-  height: 500px;
+  height: 520px;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -37,6 +37,11 @@
   flex-direction: column;
   width: 100%;
   gap: 10px;
+}
+.border-top-bottom {
+  padding: 10px 6px;
+  border-top: 1px solid #ffffff1a;
+  border-bottom: 1px solid #ffffff1a;
 }
 .filter-row-modal h3 {
   color: white;
