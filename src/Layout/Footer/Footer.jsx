@@ -12,7 +12,7 @@ function Footer() {
         <img src={logo} alt="" />
       </Box>
       <h1>Join The Community</h1>
-      <Box className="social-Box">
+      <Box className="social-div">
         <a target={"blank"} href="https://discord.gg/thorfinancial">
           <img src={discord} alt="..." />
         </a>
