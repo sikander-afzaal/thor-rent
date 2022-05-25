@@ -31,6 +31,7 @@ function RentModal() {
     }, 2000);
 
     setTimeout(() => {
+      setcomplete(false);
       closeModal();
     }, 4000);
   };
