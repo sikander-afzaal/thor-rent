@@ -14,6 +14,9 @@ function RetrieveRow() {
   const dispatch = useDispatch();
   const openModal = () => {
     dispatch(openAddModal());
+    // document.querySelector("body").classList.add("overflow");
+    const bottomApp = document.querySelector(".bottom-app");
+    bottomApp.scrollIntoView(true);
   };
   return (
     <Box className="row-rented-nft">

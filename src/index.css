@@ -25,3 +25,9 @@
 .trajan {
   font-family: "Trajan", sans-serif;
 }
+.overflow {
+  overflow-y: hidden;
+}
+html {
+  scroll-behavior: smooth;
+}
