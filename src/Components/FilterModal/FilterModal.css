@@ -152,11 +152,6 @@
   color: white;
   font-weight: 500;
 }
-@media screen and (max-width: 589px) {
-  .filter-modal {
-    top: 2%;
-  }
-}
 @media screen and (max-width: 438px) {
   .filter-modal {
     width: 95%;

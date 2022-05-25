@@ -85,10 +85,7 @@
   position: relative;
 }
 .filter-row p {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+  display: block;
   color: white;
   font-size: 1.1rem;
   padding-bottom: 6px;
@@ -98,6 +95,7 @@
 }
 .filter-row p svg {
   transition: all 0.5s ease-in-out;
+  margin-left: 10px;
 }
 .sort-drop-down {
   position: absolute;
