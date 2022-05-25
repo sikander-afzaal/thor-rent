@@ -6,7 +6,11 @@ import "./AddModal.css";
 import NftBox from "../NftBox/NftBox";
 import ReCAPTCHA from "react-google-recaptcha";
 import cross from "../../Assets/cross.svg";
-import { closeModals, setAddModal } from "../../store/actions/uiActions";
+import {
+  closeModals,
+  setAddModalVal,
+  addListingCards,
+} from "../../store/actions/uiActions";
 
 function AddModal() {
   const dispatch = useDispatch();
@@ -54,20 +58,33 @@ function AddModal() {
   const inputChangeHandler = (e) => {
     const { name, value } = e.target;
 
-    dispatch(setAddModal(name, value));
+    dispatch(setAddModalVal(name, value));
   };
 
   const setBoxActive = (idx, bool) => {
     setCardsState((prevState) => {
       const newState = [...prevState];
-      // console.log(newState[idx]);
-      // console.log(bool);
-      // console.log(newState[idx].active);
       newState[idx].active = bool;
-      // console.log(newState[idx].active);
 
       return newState;
     });
+  };
+
+  const submitHandler = () => {
+    const filteredCards = cardsState.filter((el) => {
+      el.you = you;
+      el.renter = renter;
+      return el.active;
+    });
+    const mappedCards = filteredCards.map((el) => {
+      return {
+        name: el.name,
+        rented: el.rented,
+        you: el.you,
+        renter: el.renter,
+      };
+    });
+    dispatch(addListingCards(mappedCards));
   };
 
   if (!active) {
@@ -128,7 +145,9 @@ function AddModal() {
             <p className="note kanit">Total % must equal 100%</p>
           </Box>
           <ReCAPTCHA sitekey="Your client site key" onChange={onChange} />
-          <button className="rent long-rent">SUBMIT</button>
+          <button className="rent long-rent" onClick={submitHandler}>
+            SUBMIT
+          </button>
         </Box>
       </Box>
     </>

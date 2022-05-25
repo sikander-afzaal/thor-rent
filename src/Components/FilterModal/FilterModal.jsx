@@ -1,19 +1,31 @@
 import React, { useState } from "react";
+import Box from "@mui/material/Box";
+import { useSelector, useDispatch } from "react-redux";
+
 import "./FilterModal.css";
 import heimdallImg from "../../Assets/filter/heimdall.png";
 import thorImg from "../../Assets/filter/thor.png";
 import freyaImg from "../../Assets/filter/freya.png";
 import odinImg from "../../Assets/filter/odin.png";
-import Box from "@mui/material/Box";
 import RangeSlider from "../RangeSlider/index";
 import cross from "../../Assets/cross.svg";
+import { closeModals, setNameFilters } from "../../store/actions/uiActions";
+
 function FilterModal() {
-  const [active, setActive] = useState([false, false, false, false]);
-  const [heim, setHeim] = useState(false);
-  const [freya, setFreya] = useState(false);
-  const [thor, setThor] = useState(false);
-  const [odin, setOdin] = useState(false);
+  const dispatch = useDispatch();
+  const {
+    active,
+    nameFilter: { heim, freya, thor, odin },
+  } = useSelector((state) => state.ui?.filterModal);
   const [status, setStatus] = useState(null);
+
+  const closeModal = () => {
+    dispatch(closeModals());
+  };
+
+  const nameFilterChangeHandler = (name) => {
+    dispatch(setNameFilters(name));
+  };
 
   const statusData = [
     {
@@ -26,59 +38,47 @@ function FilterModal() {
     },
   ];
 
+  if (!active) {
+    return <></>;
+  }
+
   return (
     <>
-      <Box className="overlay-modal"></Box>
+      <Box onClick={closeModal} className="overlay-modal"></Box>
       <Box className="filter-modal">
-        <img src={cross} alt="" className="cross-filter" />
+        <img onClick={closeModal} src={cross} alt="" className="cross-filter" />
         <h2 className="kanit">Filter By</h2>
         <Box className="filter-row-modal">
           <h3 className="kanit">Character</h3>
           <Box className="character-row">
             <Box
               onClick={() => {
-                // setActive((prev) => {
-                //   prev[0] = !prev[0];
-                //   return prev;
-                // });
-                setHeim((prev) => !prev);
+                nameFilterChangeHandler("heim");
               }}
               className={`${heim ? "heimdall-modal" : ""}`}
             >
               <img src={heimdallImg} alt="" className="char" />
             </Box>
             <Box
-              onClick={() =>
-                // setActive((prev) => {
-                //   prev[1] = !prev[1];
-                //   return prev;
-                // })
-                setFreya((prev) => !prev)
-              }
+              onClick={() => {
+                nameFilterChangeHandler("freya");
+              }}
               className={`${freya ? "freya-modal" : ""}`}
             >
               <img src={freyaImg} alt="" className="char" />
             </Box>
             <Box
-              onClick={() =>
-                // setActive((prev) => {
-                //   prev[2] = !prev[2];
-                //   return prev;
-                // })
-                setThor((prev) => !prev)
-              }
+              onClick={() => {
+                nameFilterChangeHandler("thor");
+              }}
               className={`${thor ? "thor-modal" : ""}`}
             >
               <img src={thorImg} alt="" className="char" />
             </Box>
             <Box
-              onClick={() =>
-                // setActive((prev) => {
-                //   prev[3] = !prev[3];
-                //   return prev;
-                // })
-                setOdin((prev) => !prev)
-              }
+              onClick={() => {
+                nameFilterChangeHandler("odin");
+              }}
               className={`${odin ? "odin-modal" : ""}`}
             >
               <img src={odinImg} alt="" className="char" />

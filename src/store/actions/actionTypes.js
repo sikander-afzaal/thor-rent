@@ -1,8 +1,9 @@
 export const CLOSE_MODAL = "CLOSE_MODAL";
 export const OPEN_MODAL = "OPEN_MODAL";
 
-export const SET_FILTER_MODAL = "SET_FILTER_MODAL";
+export const SET_NAME_FILTERS = "SET_NAME_FILTERS";
 
 export const SET_RENT_MODAL = "SET_RENT_MODAL";
 
-export const SET_ADD_MODAL = "SET_ADD_MODAL";
+export const SET_ADD_MODAL_VAL = "SET_ADD_MODAL_VAL";
+export const ADD_LISTING_CARDS = "ADD_LISTING_CARDS";

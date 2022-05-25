@@ -21,9 +21,7 @@ function NftBox({
   active,
   setActive,
 }) {
-  console.log(idx, active);
-
-  const [activeState, setActiveState] = useState(active);
+  const [activeState, setActiveState] = useState();
   const {
     addModal: { you: youState, renter: renterState },
   } = useSelector((state) => state.ui);
@@ -45,11 +43,9 @@ function NftBox({
     }
   };
 
-  // useEffect(() => {
-  //   if (!select) {
-  //     setActiveState(false);
-  //   }
-  // }, [select]);
+  useEffect(() => {
+    setActiveState(active);
+  }, [idx, active]);
 
   return (
     <Box className="nft-box">
