@@ -149,6 +149,7 @@
   .rent-box,
   .add-box {
     width: 400px !important;
+    height: 225px;
   }
   .abs-rented {
     left: 00%;
