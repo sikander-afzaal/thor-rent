@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 import "./App.css";
 import Header from "./Layout/Header/Header";
@@ -97,7 +98,7 @@ function App() {
               <p className="drop-item kanit">Highest Last Sale</p>
             </div>
           </Box>
-          <Box className="nft-grid">
+          <Box className="nft-grid desktop-grid">
             {listingCards.map((el, idx) => {
               const name = el.name.toLowerCase();
 
@@ -137,6 +138,66 @@ function App() {
 
               return <NftBox key={key} {...el} />;
             })}
+          </Box>
+          <Box className="nft-grid mobile-grid">
+            <Splide
+              options={{
+                perPage: 1,
+                perMove: 1,
+                rewind: true,
+                width: "100%",
+                loop: "loop",
+                gap: "20px",
+                direction: "ltr",
+                arrows: false,
+                pagination: false,
+                drag: true,
+              }}
+            >
+              {listingCards.map((el, idx) => {
+                const name = el.name.toLowerCase();
+
+                const key = "nft-box" + idx;
+
+                let toShow = false;
+
+                // If heim filter is selected and the name container "heimdall"
+
+                if (heim && name.includes("heimdall")) {
+                  toShow = true;
+                }
+
+                // If Freya filter is selected and the name container "freya"
+
+                if (!toShow && freya && name.includes("freya")) {
+                  toShow = true;
+                }
+
+                // If thor filter is selected and the name container "thor"
+
+                if (!toShow && thor && name.includes("thor")) {
+                  toShow = true;
+                }
+
+                // If odin filter is selected and the name container "odin"
+
+                if (!toShow && odin && name.includes("odin")) {
+                  toShow = true;
+                }
+
+                // If Freya filter is selected and the name container "freya"
+
+                if (!toShow) {
+                  return <React.Fragment key={key} />;
+                }
+
+                return (
+                  <SplideSlide>
+                    <NftBox key={key} {...el} />
+                  </SplideSlide>
+                );
+              })}
+            </Splide>
           </Box>
         </Box>
         <FilterModal />

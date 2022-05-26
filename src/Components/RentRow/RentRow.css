@@ -38,9 +38,38 @@
 .active::before {
   opacity: 1 !important;
 }
+.desktop-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.mobile-row {
+  display: none;
+}
 @media screen and (max-width: 540px) {
   .row-rented-nft {
     gap: 40px;
     justify-content: center;
+    overflow: hidden;
+    padding-bottom: 20px;
+  }
+  .desktop-row {
+    display: none;
+  }
+  .mobile-row {
+    display: block;
+    width: 100%;
+  }
+  .mobile-slider-row {
+    width: 100%;
+  }
+  .mobile-slider-row .splide__track {
+    width: 100%;
+  }
+  .mobile-slider-row ul {
+    display: flex;
+    gap: 20px;
   }
 }

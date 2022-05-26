@@ -162,6 +162,12 @@
   font-size: 2rem;
   cursor: pointer;
 }
+.desktop-grid {
+  display: grid;
+}
+.mobile-grid {
+  display: none;
+}
 @media screen and (max-width: 1620px) {
   .nft-grid {
     grid-template-columns: repeat(4, 1fr);
@@ -189,7 +195,21 @@
   }
 }
 @media screen and (max-width: 598px) {
-  .nft-grid {
-    grid-template-columns: repeat(1, 1fr);
+  .bottom-app-cont {
+    min-height: 0px;
+    height: auto;
+    overflow-x: hidden;
+  }
+  .desktop-grid {
+    display: none;
+  }
+  .mobile-grid {
+    width: 100%;
+    display: flex;
+  }
+  .mobile-grid ul {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
   }
 }
