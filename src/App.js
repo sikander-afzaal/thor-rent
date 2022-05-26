@@ -146,7 +146,6 @@ function App() {
                 perMove: 1,
                 rewind: true,
                 width: "100%",
-                loop: "loop",
                 gap: "20px",
                 direction: "ltr",
                 arrows: false,

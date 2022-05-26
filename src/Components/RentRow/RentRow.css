@@ -54,6 +54,7 @@
     justify-content: center;
     overflow: hidden;
     padding-bottom: 20px;
+    max-height: 220px;
   }
   .desktop-row {
     display: none;

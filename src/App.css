@@ -199,6 +199,7 @@
     min-height: 0px;
     height: auto;
     overflow-x: hidden;
+    max-height: 526px;
   }
   .desktop-grid {
     display: none;
