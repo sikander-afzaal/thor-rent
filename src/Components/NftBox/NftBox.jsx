@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import clsx from "clsx";
 
 import "./NftBox.css";
-import heimdall from "../../Assets/nft/heimdall.png";
+// import heimdall from "../../Assets/nft/heimdall.png";
 import energy from "../../Assets/nft/energy.svg";
 import user from "../../Assets/nft/user.svg";
 import { setRentModal } from "../../store/actions/uiActions";

@@ -65,6 +65,11 @@ const initialState = {
       rented: false,
       img: img3,
     },
+    {
+      name: "Heimdall",
+      rented: false,
+      img: img3,
+    },
   ],
   rentModal: {
     active: false,

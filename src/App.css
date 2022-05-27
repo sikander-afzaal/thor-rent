@@ -195,11 +195,14 @@
   }
 }
 @media screen and (max-width: 598px) {
+  .splide ul li {
+    list-style: none !important;
+  }
   .bottom-app-cont {
     min-height: 0px;
     height: auto;
     overflow-x: hidden;
-    max-height: 526px;
+    max-height: 855px;
     overflow-y: hidden;
   }
   .scroll-top-btn {
