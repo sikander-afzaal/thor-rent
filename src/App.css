@@ -165,9 +165,7 @@
 .desktop-grid {
   display: grid;
 }
-.mobile-grid {
-  display: none;
-}
+
 @media screen and (max-width: 1620px) {
   .nft-grid {
     grid-template-columns: repeat(4, 1fr);
@@ -190,34 +188,24 @@
   }
 }
 @media screen and (max-width: 880px) {
+  .bottom-app {
+    padding-inline: 30px;
+  }
   .nft-grid {
+    padding: 0px;
     grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    row-gap: 20px;
+  }
+  .sort-drop-down {
+    right: 0;
   }
 }
-@media screen and (max-width: 598px) {
-  .splide ul li {
-    list-style: none !important;
+@media screen and (max-width: 560px) {
+  .bottom-app {
+    padding-inline: 10px;
   }
-  .bottom-app-cont {
-    min-height: 0px;
-    height: auto;
-    overflow-x: hidden;
-    max-height: 855px;
-    overflow-y: hidden;
-  }
-  .scroll-top-btn {
-    display: none;
-  }
-  .desktop-grid {
-    display: none;
-  }
-  .mobile-grid {
-    width: 100%;
-    display: flex;
-  }
-  .mobile-grid ul {
-    display: flex;
-    width: 100%;
-    justify-content: flex-start;
+  .nft-grid {
+    row-gap: 30px;
   }
 }

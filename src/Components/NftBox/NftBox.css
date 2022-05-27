@@ -198,3 +198,35 @@
   transition-property: background, color;
   position: relative;
 }
+@media screen and (max-width: 560px) {
+  .nft-box {
+    width: 100%;
+    height: auto;
+  }
+  .top-nft {
+    width: 100%;
+  }
+  .top-nft img {
+    width: 100%;
+  }
+  .specs-nft {
+    width: 100%;
+  }
+  .bottom-nft {
+    padding: 20px 0px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+  }
+  .rent {
+    width: 90%;
+  }
+  .specs-nft {
+    width: 100%;
+  }
+  .spec-row {
+    justify-content: center;
+  }
+}

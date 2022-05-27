@@ -4,7 +4,6 @@ import Box from "@mui/material/Box";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
 import clsx from "clsx";
 
 import "./App.css";
@@ -17,7 +16,6 @@ import RentModal from "./Components/RentModal/RentModal";
 import AddModal from "./Components/AddModal/AddModal";
 import FilterModal from "./Components/FilterModal/FilterModal";
 import { openFilterModal } from "./store/actions/uiActions";
-import isEmpty from "./utils/is-empty";
 
 function App() {
   const [openDropDown, setOpenDropDown] = useState(false);
@@ -28,7 +26,6 @@ function App() {
       nameFilter: { heim, freya, thor, odin },
     },
   } = useSelector((state) => state.ui);
-  const [displayCards, setDisplayCards] = useState(listingCards); // pairs of 2
   const [filteredCards, setFilteredCards] = useState(listingCards); // applies modal filters
   const location = useLocation();
   const link1 = useRef();
@@ -46,7 +43,6 @@ function App() {
 
   useEffect(() => {
     const filteredArr = [];
-
     listingCards.forEach((el) => {
       const name = el.name.toLowerCase();
 
@@ -82,27 +78,7 @@ function App() {
         filteredArr.push(el);
       }
     });
-
     setFilteredCards(filteredArr);
-
-    const refactoredArr = [];
-    let pair = [];
-    const len = filteredArr.length;
-
-    filteredArr.forEach((el, idx) => {
-      pair.push(el);
-
-      if (idx % 2 !== 0 && idx > 0) {
-        refactoredArr.push(pair);
-        pair = [];
-      }
-
-      if (len % 2 !== 0 && idx === len - 1) {
-        refactoredArr.push(pair);
-      }
-    });
-
-    setDisplayCards(refactoredArr);
   }, [listingCards, thor, freya, odin, heim]);
 
   return (
@@ -162,40 +138,12 @@ function App() {
               <p className="drop-item kanit">Highest Last Sale</p>
             </div>
           </Box>
-          <Box className="nft-grid desktop-grid">
+          <Box className="nft-grid">
             {filteredCards.map((el, idx) => {
               const key = "nft-box" + idx;
 
               return <NftBox key={key} {...el} />;
             })}
-          </Box>
-          <Box className="nft-grid mobile-grid">
-            <Splide
-              options={{
-                perPage: 1,
-                perMove: 1,
-                rewind: true,
-                width: "100%",
-                gap: "20px",
-                direction: "ltr",
-                arrows: false,
-                pagination: false,
-                drag: true,
-              }}
-            >
-              {displayCards.map((el, idx) => {
-                const key = "nft-box" + idx;
-
-                return (
-                  <SplideSlide key={key}>
-                    <div className="col-grid">
-                      <NftBox {...el[0]} />
-                      {!isEmpty(el[1]) && <NftBox {...el[1]} />}
-                    </div>
-                  </SplideSlide>
-                );
-              })}
-            </Splide>
           </Box>
         </Box>
         <FilterModal />
