@@ -1,13 +1,25 @@
 import React from "react";
 import "./rentedNft.css";
+import Slider from "@mui/material/Slider";
 import Box from "@mui/material/Box";
 function RentedNft({ text, img, name, btn }) {
   return (
     <Box className={`rent-box ${name}`}>
-      <Box className="cooldown-bar"></Box>
-      <Box className="hover-box">
-        <p className="kanit">Return Cooldown</p>
-        <p className="kanit">4 Hours</p>
+      <Box className="tooltip_wrap">
+        <Slider
+          size="small"
+          defaultValue={0}
+          aria-label="Small"
+          value={5}
+          max={10}
+          valueLabelDisplay="auto"
+          valueLabelFormat={(value) => (
+            <Box className="hover-box">
+              <p className="kanit">Return Cooldown</p>
+              <p className="kanit">{value} Hours</p>
+            </Box>
+          )}
+        />
       </Box>
       <img src={img} alt="" className="abs-rented" />
       <Box className="main-box-rent">
