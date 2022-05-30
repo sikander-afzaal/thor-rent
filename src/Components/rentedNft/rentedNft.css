@@ -189,18 +189,19 @@
   font-weight: 600;
   font-size: 2.2rem;
   margin: 5px 0 0 0;
-  /* background: linear-gradient(
-    112.98deg,
-    #fff4d1 8.47%,
-    #f5d28f 23.3%,
-    #675537 91.31%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent; */
 }
-
+.heimdall .MuiSlider-thumbColorPrimary:hover {
+  box-shadow: 0px 0px 0px 8px rgb(147 57 17 / 50%) !important;
+}
+.freya .MuiSlider-thumbColorPrimary:hover {
+  box-shadow: 0px 0px 0px 8px rgb(79 40 141 / 50%) !important;
+}
+.odin .MuiSlider-thumbColorPrimary:hover {
+  box-shadow: 0px 0px 0px 8px rgb(145 112 20 / 50%) !important;
+}
+.thor .MuiSlider-thumbColorPrimary:hover {
+  box-shadow: 0px 0px 0px 8px rgb(39 78 143 / 50%) !important;
+}
 @media screen and (max-width: 542px) {
   .rent-box,
   .add-box {
