@@ -54,7 +54,7 @@
   align-self: center;
   padding: 8px 24px;
   background: transparent;
-  border: 1px solid transparent;
+  border: 1px solid white;
   border-radius: 64px;
   color: white;
   cursor: pointer;
@@ -79,8 +79,6 @@
   border-radius: 64px;
   z-index: -1;
   transition: border-color 0.2s;
-  background-image: linear-gradient(#11141d, #11141d),
-    linear-gradient(90deg, #008cff, #6942ef);
 }
 .return::after {
   content: "";
