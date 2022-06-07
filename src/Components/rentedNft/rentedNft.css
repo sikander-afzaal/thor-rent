@@ -53,16 +53,65 @@
 .return {
   align-self: center;
   padding: 8px 24px;
-  background: #11141d;
-  border: 1px solid #ffffff;
+  background: transparent;
+  border: 1px solid transparent;
   border-radius: 64px;
   color: white;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  background-clip: padding-box;
+  overflow: hidden;
+  z-index: 1;
+  position: relative;
+}
+.return::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  border: 1px solid transparent;
+  background-clip: padding-box, border-box;
+  background-repeat: repeat-x;
+  background-size: calc(100% + 2px * 2) calc(100% + 2px * 2);
+  background-position: center;
+  border-radius: 64px;
+  z-index: -1;
+  transition: border-color 0.2s;
+  background-image: linear-gradient(#11141d, #11141d),
+    linear-gradient(90deg, #008cff, #6942ef);
+}
+.return::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70vmax;
+  height: 70vmax;
+  border-radius: 50%;
+  background-image: linear-gradient(90deg, #008cff, #6942ef);
+  transform-origin: center;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.4s ease-in-out;
+  z-index: -1;
 }
 .return:hover {
-  opacity: 0.4;
+  color: white;
 }
+.return:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+.return:active {
+  color: #c3c4d5;
+}
+.return:focus {
+  color: white;
+}
+.return:focus::before {
+  border-color: #00b8d9;
+}
+
 .abs-rented {
   position: absolute;
   inset: 0;
