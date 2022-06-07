@@ -122,7 +122,7 @@
 }
 .cooldown-bar {
   width: 95%;
-  background-color: rgba(255, 255, 255, 0.24);
+  /* background-color: rgba(255, 255, 255, 0.24); */
   position: absolute;
   top: 5px;
   left: 50%;
@@ -146,15 +146,11 @@
   width: 120px;
   height: 70px;
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background-color: #13161e;
-  position: absolute;
-  left: 60%;
-  transform: translateX(-50%);
-  top: 30px;
-  opacity: 0;
   z-index: 4;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 10px;
@@ -193,6 +189,67 @@
   text-fill-color: transparent;
   font-weight: 500;
   font-size: 18px;
+}
+
+.tooltip_wrap {
+  width: 95%;
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+}
+
+.tooltip_wrap .MuiSlider-track,
+.tooltip_wrap .MuiSlider-rail {
+  height: 5px !important;
+  background-color: #fff !important;
+}
+
+.tooltip_wrap .MuiSlider-thumbColorPrimary {
+  background: #fff !important;
+}
+
+.customTooltip {
+  background-color: #000000;
+  width: max-content;
+  padding: 10px;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.customTooltip h5 {
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.MuiSlider-valueLabelOpen,
+.MuiSlider-valueLabel {
+  background-color: transparent !important;
+  top: 102px !important;
+}
+
+.customTooltip h2 {
+  font-weight: 600;
+  font-size: 2.2rem;
+  margin: 5px 0 0 0;
+}
+.heimdall .MuiSlider-thumbColorPrimary:hover {
+  box-shadow: 0px 0px 0px 8px rgb(147 57 17 / 50%) !important;
+}
+.freya .MuiSlider-thumbColorPrimary:hover {
+  box-shadow: 0px 0px 0px 8px rgb(79 40 141 / 50%) !important;
+}
+.odin .MuiSlider-thumbColorPrimary:hover {
+  box-shadow: 0px 0px 0px 8px rgb(145 112 20 / 50%) !important;
+}
+.thor .MuiSlider-thumbColorPrimary:hover {
+  box-shadow: 0px 0px 0px 8px rgb(39 78 143 / 50%) !important;
 }
 @media screen and (max-width: 542px) {
   .rent-box,
